@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "afdcaf8e-e30b-4c8b-a2b9-0f6b767af6c0",
+		"name": "Proyecto Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/ciudadano",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dni\": 43769906,\n    \"nombre\": \"Claudio Manuel\",\n    \"apellido\": \"Temple Aguilar\",\n    \"direccion\": \"El prado 141 dpto 2\",\n    \"distrito\": \"surco\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/api/ciudadano",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"ciudadano"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/ciudadano",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/ciudadano",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"ciudadano"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reporte",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"distrito\": \"Surco\",\n    \"tipo\": \"Robo\",\n    \"comentario\": \"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/api/reporte",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"reporte"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reporte",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/reporte",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"reporte"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
