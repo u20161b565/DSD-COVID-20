@@ -24,7 +24,7 @@ public class ServicioMunicipalidadREST {
     public Ciudadano registrar(@RequestBody Ciudadano ciudadano){
         Ciudadano c;
         try {
-            System.out.print(ciudadano.getDni());
+            System.out.print(ciudadano.getNumeroDocumento());
             c = servicioRegistroUsuario.registrar(ciudadano);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo guardar.");

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface RepositorioMunicipalidadCiudadano extends JpaRepository<Ciudadano, Long> {
 
-    @Query("SELECT c FROM Ciudadano c WHERE c.dni = :dni")
-    List<Ciudadano> findByType(@Param("dni") Long dni);
+    @Query("SELECT c FROM Ciudadano c WHERE c.numeroDocumento = :numeroDocumento")
+    List<Ciudadano> findByType(@Param("numeroDocumento") Long numeroDocumento);
 
 }

@@ -5,7 +5,6 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "REPORTES_TBL")
 public class Reporte implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
