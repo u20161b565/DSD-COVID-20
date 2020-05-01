@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface RepositorioMunicipalidadReporte extends JpaRepository<Reporte, Long> {
 
-    @Query("SELECT r FROM Reporte r WHERE r.codigo = :codigo")
-    List<Reporte> findByType(@Param("codigo") Long codigo);
+    @Query("SELECT r FROM Reporte r WHERE r.id = :id")
+    List<Reporte> findByType(@Param("id") int id);
 
 }

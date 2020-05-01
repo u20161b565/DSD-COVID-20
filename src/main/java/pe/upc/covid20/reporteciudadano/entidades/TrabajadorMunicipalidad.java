@@ -18,11 +18,31 @@ public class TrabajadorMunicipalidad implements Serializable {
     private String apellidoMaterno;
     private String correo;
     private String celular;
+    private Boolean esActivo;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "municipalidad_id", referencedColumnName = "id")
     private Municipalidad municipalidad;
-    private Boolean esActivo;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "reporte_id", referencedColumnName = "id")
+    private Reporte reporte;
+
+    public Reporte getReporte() {
+        return reporte;
+    }
+
+    public void setReporte(Reporte reporte) {
+        this.reporte = reporte;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUsuario() {
         return usuario;
