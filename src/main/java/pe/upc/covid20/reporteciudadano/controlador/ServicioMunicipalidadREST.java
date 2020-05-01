@@ -43,7 +43,7 @@ public class ServicioMunicipalidadREST {
         return l;
     }
 
-    @PostMapping("/reporte")
+    /*@PostMapping("/reporte")
     public Reporte registrar(@RequestBody Reporte reporte){
         Reporte r;
         try {
@@ -53,7 +53,7 @@ public class ServicioMunicipalidadREST {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo guardar.");
         }
         return r;
-    }
+    }*/
 
     @GetMapping("/reporte")
     public List<Reporte> listarReporte() {
