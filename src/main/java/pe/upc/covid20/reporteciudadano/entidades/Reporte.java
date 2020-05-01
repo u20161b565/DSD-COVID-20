@@ -25,6 +25,14 @@ public class Reporte implements Serializable {
     @JoinColumn(name = "distrito_id", referencedColumnName = "id")
     private Distrito distrito;
 
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ciudadano_id", referencedColumnName = "id")
+    private Ciudadano ciudadano;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TrabajadorMunicipalidad_id", referencedColumnName = "id")
+    private TrabajadorMunicipalidad trabajadorMunicipalidad;
+
     public int getId() {
         return id;
     }
