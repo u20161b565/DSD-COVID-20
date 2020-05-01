@@ -7,42 +7,26 @@ import java.io.Serializable;
 @Entity
 public class Reporte implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
-    private String distrito;
-    private String tipo;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TipoReporte_id", referencedColumnName = "id")
+    private TipoReporte tipoReporte;
+
+    private int tipo;
+    private String direccion;
     @Column(length = 5000)
     private String comentario;
 
-    public Long getCodigo() {
-        return codigo;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "departamento_id", referencedColumnName = "id")
+    private Departamento departamento;
 
-    public void setCodigo(Long codigo) {
-        this.codigo = codigo;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "distrito_id", referencedColumnName = "id")
+    private Distrito distrito;
 
-    public String getDistrito() {
-        return distrito;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "provincia_id", referencedColumnName = "id")
+    private Provincia provincia;
 
-    public void setDistrito(String distrito) {
-        this.distrito = distrito;
-    }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public String getComentario() {
-        return comentario;
-    }
-
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
-    }
 }
