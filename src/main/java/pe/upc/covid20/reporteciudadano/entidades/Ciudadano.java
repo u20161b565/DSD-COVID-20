@@ -22,6 +22,19 @@ public class Ciudadano implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "distrito_id", referencedColumnName = "id")
     private Distrito distrito;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "reporte_id", referencedColumnName = "id")
+    private Reporte reporte;
+
+    public Reporte getReporte() {
+        return reporte;
+    }
+
+    public void setReporte(Reporte reporte) {
+        this.reporte = reporte;
+    }
+
     private Boolean esActivo;
 
     public int getId() {

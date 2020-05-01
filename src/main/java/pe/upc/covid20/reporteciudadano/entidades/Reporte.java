@@ -3,6 +3,7 @@ package pe.upc.covid20.reporteciudadano.entidades;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 public class Reporte implements Serializable {
@@ -25,13 +26,27 @@ public class Reporte implements Serializable {
     @JoinColumn(name = "distrito_id", referencedColumnName = "id")
     private Distrito distrito;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ciudadano_id", referencedColumnName = "id")
-    private Ciudadano ciudadano;
+    @OneToMany(
+            mappedBy = "reporte",
+            cascade = CascadeType.PERSIST,
+            fetch = FetchType.LAZY
+    )
+    private Set<Ciudadano> ciudadanos;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TrabajadorMunicipalidad_id", referencedColumnName = "id")
-    private TrabajadorMunicipalidad trabajadorMunicipalidad;
+    @OneToMany(
+            mappedBy = "reporte",
+            cascade = CascadeType.PERSIST,
+            fetch = FetchType.LAZY
+    )
+    private Set<TrabajadorMunicipalidad> trabajadorMunicipalidads;
+
+    public Set<TrabajadorMunicipalidad> getTrabajadorMunicipalidads() {
+        return trabajadorMunicipalidads;
+    }
+
+    public void setTrabajadorMunicipalidads(Set<TrabajadorMunicipalidad> trabajadorMunicipalidads) {
+        this.trabajadorMunicipalidads = trabajadorMunicipalidads;
+    }
 
     public int getId() {
         return id;
@@ -95,5 +110,13 @@ public class Reporte implements Serializable {
 
     public void setDistrito(Distrito distrito) {
         this.distrito = distrito;
+    }
+
+    public Set<Ciudadano> getCiudadanos() {
+        return ciudadanos;
+    }
+
+    public void setCiudadanos(Set<Ciudadano> ciudadanos) {
+        this.ciudadanos = ciudadanos;
     }
 }
