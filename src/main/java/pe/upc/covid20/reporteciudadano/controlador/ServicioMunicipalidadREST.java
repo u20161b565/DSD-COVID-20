@@ -25,28 +25,28 @@ public class ServicioMunicipalidadREST {
     @Autowired
     private ServicioMunicipalidad servicioMunicipalidad;
 
-    @PostMapping("/ciudadano")
-    public Ciudadano registrar(@RequestBody Ciudadano ciudadano){
-        Ciudadano c;
-        try {
-            System.out.print(ciudadano.getNumeroDocumento());
-            c = servicioRegistroUsuario.registrar(ciudadano);
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo guardar.");
-        }
-        return c;
-    }
-
-    @GetMapping("/ciudadano")
-    public List<Ciudadano> listar() {
-        List<Ciudadano> l;
-        try {
-            l = servicioRegistroUsuario.listar();
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo listar.");
-        }
-        return l;
-    }
+//    @PostMapping("/ciudadano")
+//    public Ciudadano registrar(@RequestBody Ciudadano ciudadano){
+//        Ciudadano c;
+//        try {
+//            System.out.print(ciudadano.getNumeroDocumento());
+//            c = servicioRegistroUsuario.registrar(ciudadano);
+//        } catch (Exception e) {
+//            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo guardar.");
+//        }
+//        return c;
+//    }
+//
+//    @GetMapping("/ciudadano")
+//    public List<Ciudadano> listar() {
+//        List<Ciudadano> l;
+//        try {
+//            l = servicioRegistroUsuario.listar();
+//        } catch (Exception e) {
+//            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo listar.");
+//        }
+//        return l;
+//    }
 
     @PostMapping("/reporte")
     public Reporte registrar(@RequestBody Reporte reporte){
