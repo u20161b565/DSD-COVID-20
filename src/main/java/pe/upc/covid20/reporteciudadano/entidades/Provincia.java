@@ -57,10 +57,9 @@ public class Provincia implements Serializable {
 
     public void setDistritos(Set<Distrito> distritos) {
         this.distritos = distritos;
-        /*
         for (Distrito distrito : distritos) {
             distrito.setProvincia(this);
-        }*/
+        }
     }
 
     /*

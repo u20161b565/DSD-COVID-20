@@ -1,5 +1,7 @@
 package pe.upc.covid20.reporteciudadano.entidades;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -55,14 +57,26 @@ public class Distrito implements Serializable {
         this.municipalidades = municipalidades;
     }
 
+    /*
     public Provincia getProvincia() {
         return provincia;
     }
+    */
 
     public void setProvincia(Provincia provincia) {
         this.provincia = provincia;
+        provincia.getDistritos().add(this);
     }
 
+    @JsonProperty("provincia_id")
+    public void setProvinciaId(Integer id) {
+        Provincia provincia = new Provincia();
+        provincia.setId(id);
+        this.provincia = provincia;
+    }
+
+    public Distrito() {
+    }
     public Distrito(int id, String nombre, Boolean esActivo, Set<Municipalidad> municipalidades, Provincia provincia) {
         this.id = id;
         this.nombre = nombre;
