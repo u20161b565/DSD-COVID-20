@@ -18,11 +18,12 @@ public class ServicioCiudadanoREST {
     @GetMapping("/ciudadano")
     public List<Ciudadano> ciListar() {
         List<Ciudadano> result;
-        try {
-            result = servicioCiudadano.ciListar();
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo listar.");
-        }
+        result = servicioCiudadano.ciListar();
+//        try {
+//            result = servicioCiudadano.ciListar();
+//        } catch (Exception e) {
+//            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo listar.");
+//        }
         return result;
     }
 

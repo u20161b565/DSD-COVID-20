@@ -60,19 +60,19 @@ public class ServicioCiudadano {
                     System.out.println(nameInput);
                     System.out.println(nameAPI);
 
-                    if(nameInput.equalsIgnoreCase(nameAPI))  {
-                        System.out.println("IGUAL");
-                    } else {
+                    if(!nameInput.equalsIgnoreCase(nameAPI))  {
                         throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Sus nombres y apellidos deben ser iguales a su dni.");
                     }
                 }
-                System.out.println(result.get("status"));
             } catch (Exception ex) {
                 System.out.println("ERROR");
             }
         }
-        // return repositorioCiudadano.save(data);
-        return data;
+        data.setPrimerNombre(data.getPrimerNombre().toUpperCase());
+        data.setSecundoNombre(data.getSecundoNombre().toUpperCase());
+        data.setApellidoPaterno(data.getApellidoPaterno().toUpperCase());
+        data.setApellidoMaterno(data.getApellidoMaterno().toUpperCase());
+        return repositorioCiudadano.save(data);
     }
 
     public Ciudadano ciActualizar(Integer codigo, Ciudadano data){
