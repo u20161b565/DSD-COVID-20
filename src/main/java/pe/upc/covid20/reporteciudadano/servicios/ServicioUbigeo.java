@@ -53,15 +53,49 @@ public class ServicioUbigeo {
         return repositorioProvincia.findAll();
     }
 
+    public Provincia proObtener(Integer id) {
+        return repositorioProvincia.findById(id).get();
+    }
+
     public Provincia proRegistrar(Provincia data){
         return repositorioProvincia.save(data);
+    }
+
+    public Provincia proActualizar(Integer codigo, Provincia data){
+        if (repositorioProvincia.existsById(codigo)) {
+            data.setId(codigo);
+            return repositorioProvincia.save(data);
+        } else {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo actulizar.");
+        }
+    }
+
+    public void proEliminar(Integer codigo) {
+        repositorioProvincia.deleteById(codigo);
     }
 
     public List<Distrito> disListar() {
         return repositorioDistrito.findAll();
     }
 
+    public Distrito disObtener(Integer id) {
+        return repositorioDistrito.findById(id).get();
+    }
+
     public Distrito disRegistrar(Distrito data){
         return repositorioDistrito.save(data);
+    }
+
+    public Distrito disActualizar(Integer codigo, Distrito data){
+        if (repositorioDistrito.existsById(codigo)) {
+            data.setId(codigo);
+            return repositorioDistrito.save(data);
+        } else {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo actulizar.");
+        }
+    }
+
+    public void disEliminar(Integer codigo) {
+        repositorioDistrito.deleteById(codigo);
     }
 }
