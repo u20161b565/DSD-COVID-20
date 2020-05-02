@@ -1,4 +1,4 @@
-package pe.upc.covid20.reporteciudadano.servicios;
+package com.upc.curso.jms;
 
 import java.util.UUID;
 
