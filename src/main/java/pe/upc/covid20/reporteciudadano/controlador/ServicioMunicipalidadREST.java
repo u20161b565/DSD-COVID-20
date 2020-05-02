@@ -5,6 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import pe.upc.covid20.reporteciudadano.entidades.Departamento;
+import pe.upc.covid20.reporteciudadano.entidades.Municipalidad;
+import pe.upc.covid20.reporteciudadano.servicios.ServicioMunicipalidad;
 import pe.upc.covid20.reporteciudadano.servicios.ServicioRegistroUsuario;
 import pe.upc.covid20.reporteciudadano.entidades.Reporte;
 import pe.upc.covid20.reporteciudadano.entidades.Ciudadano;
@@ -19,6 +22,8 @@ public class ServicioMunicipalidadREST {
     private ServicioRegistroUsuario servicioRegistroUsuario;
     @Autowired
     private ServicioRegistroReporte servicioRegistroReporte;
+    @Autowired
+    private ServicioMunicipalidad servicioMunicipalidad;
 
     @PostMapping("/ciudadano")
     public Ciudadano registrar(@RequestBody Ciudadano ciudadano){
@@ -64,5 +69,39 @@ public class ServicioMunicipalidadREST {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo listar.");
         }
         return l;
+    }
+
+    @PostMapping("/municipalidad")
+    public Municipalidad registrar(@RequestBody Municipalidad municipalidad){
+        Municipalidad m;
+        try {
+            System.out.print(municipalidad.getNombre());
+            m = servicioMunicipalidad.proRegistrar(municipalidad);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo guardar.");
+        }
+        return m;
+    }
+
+    @GetMapping("/municipalidad")
+    public List<Municipalidad> proListar() {
+        List<Municipalidad> m;
+        try {
+            m = servicioMunicipalidad.proListar();
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo listar.");
+        }
+        return m;
+    }
+
+    @GetMapping("/municipalidad/{codigo}")
+    public Municipalidad depaObtener(@PathVariable("codigo") Integer codigo) {
+        Municipalidad result;
+        try {
+            result = servicioMunicipalidad.proObtener(codigo);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo obtener");
+        }
+        return result;
     }
 }
