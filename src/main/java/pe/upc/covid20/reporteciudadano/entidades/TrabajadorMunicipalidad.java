@@ -139,4 +139,21 @@ public class TrabajadorMunicipalidad implements Serializable {
     public void setEsActivo(Boolean esActivo) {
         this.esActivo = esActivo;
     }
+
+    public TrabajadorMunicipalidad(Long id, String usuario, String contrasena, String tipoDocumento, String numeroDocumento, String primerNombre, String secundoNombre, String apellidoPaterno, String apellidoMaterno, String correo, String celular, Boolean esActivo, Municipalidad municipalidad, Reporte reporte) {
+        this.id = id;
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+        this.tipoDocumento = tipoDocumento;
+        this.numeroDocumento = numeroDocumento;
+        this.primerNombre = primerNombre;
+        this.secundoNombre = secundoNombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.correo = correo;
+        this.celular = celular;
+        this.esActivo = esActivo;
+        this.municipalidad = municipalidad;
+        this.reporte = reporte;
+    }
 }

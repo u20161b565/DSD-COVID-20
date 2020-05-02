@@ -57,4 +57,12 @@ public class Municipalidad implements Serializable {
         this.distrito = distrito;
         //distrito.getMunicipalidades().add(this);
     }
+
+    public Municipalidad(int id, String nombre, String direccion, Boolean esActivo, Distrito distrito) {
+        this.id = id;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.esActivo = esActivo;
+        this.distrito = distrito;
+    }
 }

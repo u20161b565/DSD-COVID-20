@@ -44,4 +44,11 @@ public class TipoReporte implements Serializable {
     public void setEsActivo(Boolean esActivo) {
         this.esActivo = esActivo;
     }
+
+    public TipoReporte(int id, String codigo, String nombre, Boolean esActivo) {
+        this.id = id;
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.esActivo = esActivo;
+    }
 }
