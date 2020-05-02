@@ -58,9 +58,10 @@ public class ServicioUbigeo {
     }
 
     public Provincia proRegistrar(Provincia data){
-        Departamento depa = repositorioDepartamento.findById(data.getDepartamento().getId()).get();
-        System.out.println(depa);
-        data.setDepartamento(depa);
+        //System.out.println("proRegistrar "+ data.getDepartamento().getId());
+        //Departamento depa = repositorioDepartamento.findById(data.getDepartamento().getId()).get();
+        //System.out.println(depa);
+        //data.setDepartamento(depa);
         return repositorioProvincia.save(data);
     }
 

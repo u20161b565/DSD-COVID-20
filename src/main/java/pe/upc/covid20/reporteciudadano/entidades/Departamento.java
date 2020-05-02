@@ -2,6 +2,7 @@ package pe.upc.covid20.reporteciudadano.entidades;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -49,17 +50,20 @@ public class Departamento implements Serializable {
 
     public void setProvincias(Set<Provincia> provincias) {
         this.provincias = provincias;
-        /*
         for (Provincia provincia : provincias) {
             provincia.setDepartamento(this);
         }
-        */
     }
-
-    public Departamento(int id, String nombre, Boolean esActivo, Set<Provincia> provincias) {
+    public Departamento() {
+        this.provincias = new HashSet<>();
+    }
+    public Departamento(int id, String nombre, Boolean esActivo) {
         this.id = id;
         this.nombre = nombre;
         this.esActivo = esActivo;
         this.provincias = provincias;
+        this.provincias = new HashSet<>();
     }
+
+
 }

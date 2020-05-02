@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -62,27 +63,33 @@ public class Provincia implements Serializable {
         }*/
     }
 
+    /*
     public Departamento getDepartamento() {
         return departamento;
     }
+    */
 
     public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
         departamento.getProvincias().add(this);
     }
 
-    /*
-    @JsonCreator
-    public Departamento (@JsonProperty("departamento_id") Integer departamento_id ) {
-        this.departamento_id = departamento_id;
+    @JsonProperty("departamento_id")
+    public void setDepartamentoId(Integer id) {
+        Departamento departamento = new Departamento();
+        departamento.setId(id);
+        this.departamento = departamento;
     }
-    */
-    
+
+    public Provincia() {
+        this.distritos = new HashSet<>();
+    }
+
     public Provincia(int id, String nombre, Boolean esActivo, Set<Distrito> distritos, Departamento departamento) {
         this.id = id;
         this.nombre = nombre;
         this.esActivo = esActivo;
-        this.distritos = distritos;
+        this.distritos = new HashSet<>();
         this.departamento = departamento;
     }
 }

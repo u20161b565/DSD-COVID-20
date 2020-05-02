@@ -103,6 +103,8 @@ public class ServicioUbigeoREST {
         /*
         try {
          */
+            System.out.println("Controller proRegistrar");
+            System.out.println(input);
             result = servicioUbigeo.proRegistrar(input);
         /*} catch (Exception e) {
 
