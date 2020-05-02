@@ -71,8 +71,18 @@ public class Provincia implements Serializable {
         departamento.getProvincias().add(this);
     }
 
+    /*
     @JsonCreator
     public Departamento (@JsonProperty("departamento_id") Integer departamento_id ) {
         this.departamento_id = departamento_id;
+    }
+    */
+    
+    public Provincia(int id, String nombre, Boolean esActivo, Set<Distrito> distritos, Departamento departamento) {
+        this.id = id;
+        this.nombre = nombre;
+        this.esActivo = esActivo;
+        this.distritos = distritos;
+        this.departamento = departamento;
     }
 }

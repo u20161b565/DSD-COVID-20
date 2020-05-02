@@ -55,4 +55,11 @@ public class Departamento implements Serializable {
         }
         */
     }
+
+    public Departamento(int id, String nombre, Boolean esActivo, Set<Provincia> provincias) {
+        this.id = id;
+        this.nombre = nombre;
+        this.esActivo = esActivo;
+        this.provincias = provincias;
+    }
 }

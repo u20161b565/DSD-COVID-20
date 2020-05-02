@@ -155,4 +155,21 @@ public class Reporte implements Serializable {
     public void setCiudadanos(Set<Ciudadano> ciudadanos) {
         this.ciudadanos = ciudadanos;
     }
+
+    public Reporte(int id, TipoReporte tipoReporte, String direccion, int latitud, int longitud, String status, String descripcion, boolean notificacionPolicia, boolean notificacionSerenazgo, boolean notificacionBomberos, boolean notificacionAmbulancia, Distrito distrito, Set<Ciudadano> ciudadanos, Set<TrabajadorMunicipalidad> trabajadorMunicipalidads) {
+        this.id = id;
+        this.tipoReporte = tipoReporte;
+        this.direccion = direccion;
+        this.latitud = latitud;
+        this.longitud = longitud;
+        this.status = status;
+        this.descripcion = descripcion;
+        this.notificacionPolicia = notificacionPolicia;
+        this.notificacionSerenazgo = notificacionSerenazgo;
+        this.notificacionBomberos = notificacionBomberos;
+        this.notificacionAmbulancia = notificacionAmbulancia;
+        this.distrito = distrito;
+        this.ciudadanos = ciudadanos;
+        this.trabajadorMunicipalidads = trabajadorMunicipalidads;
+    }
 }

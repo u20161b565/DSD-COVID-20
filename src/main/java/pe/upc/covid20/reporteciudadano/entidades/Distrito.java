@@ -62,4 +62,12 @@ public class Distrito implements Serializable {
     public void setProvincia(Provincia provincia) {
         this.provincia = provincia;
     }
+
+    public Distrito(int id, String nombre, Boolean esActivo, Set<Municipalidad> municipalidades, Provincia provincia) {
+        this.id = id;
+        this.nombre = nombre;
+        this.esActivo = esActivo;
+        this.municipalidades = municipalidades;
+        this.provincia = provincia;
+    }
 }
