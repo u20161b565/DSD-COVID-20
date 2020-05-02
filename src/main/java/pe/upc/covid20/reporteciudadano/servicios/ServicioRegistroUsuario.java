@@ -12,11 +12,11 @@ public class ServicioRegistroUsuario {
     @Autowired
     private RepositorioCiudadano repositorioCiudadano;
 
-    public Ciudadano registrar(Ciudadano ciudadano){
+    public Ciudadano registrar(Ciudadano ciudadano) {
         return repositorioCiudadano.save(ciudadano);
     }
 
-    public List<Ciudadano> listar(){
+    public List<Ciudadano> listar() {
         return repositorioCiudadano.findAll();
     }
 }

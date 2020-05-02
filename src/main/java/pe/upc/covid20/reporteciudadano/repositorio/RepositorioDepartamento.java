@@ -8,7 +8,7 @@ import pe.upc.covid20.reporteciudadano.entidades.Departamento;
 
 import java.util.List;
 
-public interface RepositorioDepartamento  extends JpaRepository<Departamento, Integer> {
+public interface RepositorioDepartamento extends JpaRepository<Departamento, Integer> {
 
     @Query("SELECT d FROM Departamento d WHERE d.id = :id")
     List<Departamento> findByType(@Param("id") int id);

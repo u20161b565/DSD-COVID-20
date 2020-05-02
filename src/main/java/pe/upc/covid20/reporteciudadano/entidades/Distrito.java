@@ -77,6 +77,7 @@ public class Distrito implements Serializable {
 
     public Distrito() {
     }
+
     public Distrito(int id, String nombre, Boolean esActivo, Set<Municipalidad> municipalidades, Provincia provincia) {
         this.id = id;
         this.nombre = nombre;

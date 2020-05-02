@@ -26,7 +26,7 @@ public class ServicioMunicipalidadREST {
     private ServicioMunicipalidad servicioMunicipalidad;
 
     @PostMapping("/ciudadano")
-    public Ciudadano registrar(@RequestBody Ciudadano ciudadano){
+    public Ciudadano registrar(@RequestBody Ciudadano ciudadano) {
         Ciudadano c;
         try {
             System.out.print(ciudadano.getNumeroDocumento());
@@ -49,7 +49,7 @@ public class ServicioMunicipalidadREST {
     }
 
     @PostMapping("/reporte")
-    public Reporte registrar(@RequestBody Reporte reporte){
+    public Reporte registrar(@RequestBody Reporte reporte) {
         Reporte r;
         try {
             System.out.print(reporte);
@@ -72,7 +72,7 @@ public class ServicioMunicipalidadREST {
     }
 
     @PostMapping("/municipalidad")
-    public Municipalidad registrar(@RequestBody Municipalidad municipalidad){
+    public Municipalidad registrar(@RequestBody Municipalidad municipalidad) {
         Municipalidad m;
         try {
             System.out.print(municipalidad.getNombre());

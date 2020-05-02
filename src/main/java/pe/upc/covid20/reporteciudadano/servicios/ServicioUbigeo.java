@@ -29,11 +29,11 @@ public class ServicioUbigeo {
         return repositorioDepartamento.findById(id).get();
     }
 
-    public Departamento depaRegistrar(Departamento data){
+    public Departamento depaRegistrar(Departamento data) {
         return repositorioDepartamento.save(data);
     }
 
-    public Departamento depaActualizar(Integer codigo, Departamento data){
+    public Departamento depaActualizar(Integer codigo, Departamento data) {
         if (repositorioDepartamento.existsById(codigo)) {
             data.setId(codigo);
             return repositorioDepartamento.save(data);
@@ -54,11 +54,11 @@ public class ServicioUbigeo {
         return repositorioProvincia.findById(id).get();
     }
 
-    public Provincia proRegistrar(Provincia data){
+    public Provincia proRegistrar(Provincia data) {
         return repositorioProvincia.save(data);
     }
 
-    public Provincia proActualizar(Integer codigo, Provincia data){
+    public Provincia proActualizar(Integer codigo, Provincia data) {
         if (repositorioProvincia.existsById(codigo)) {
             data.setId(codigo);
             return repositorioProvincia.save(data);
@@ -79,11 +79,11 @@ public class ServicioUbigeo {
         return repositorioDistrito.findById(id).get();
     }
 
-    public Distrito disRegistrar(Distrito data){
+    public Distrito disRegistrar(Distrito data) {
         return repositorioDistrito.save(data);
     }
 
-    public Distrito disActualizar(Integer codigo, Distrito data){
+    public Distrito disActualizar(Integer codigo, Distrito data) {
         if (repositorioDistrito.existsById(codigo)) {
             data.setId(codigo);
             return repositorioDistrito.save(data);
