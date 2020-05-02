@@ -21,6 +21,10 @@ public class Reporte implements Serializable {
     private String status;
     @Column(length = 5000)
     private String descripcion;
+    private boolean notificacionPolicia;
+    private boolean notificacionSerenazgo;
+    private boolean notificacionBomberos;
+    private boolean notificacionAmbulancia;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "distrito_id", referencedColumnName = "id")
@@ -39,6 +43,38 @@ public class Reporte implements Serializable {
             fetch = FetchType.LAZY
     )
     private Set<TrabajadorMunicipalidad> trabajadorMunicipalidads;
+
+    public boolean isNotificacionPolicia() {
+        return notificacionPolicia;
+    }
+
+    public void setNotificacionPolicia(boolean notificacionPolicia) {
+        this.notificacionPolicia = notificacionPolicia;
+    }
+
+    public boolean isNotificacionSerenazgo() {
+        return notificacionSerenazgo;
+    }
+
+    public void setNotificacionSerenazgo(boolean notificacionSerenazgo) {
+        this.notificacionSerenazgo = notificacionSerenazgo;
+    }
+
+    public boolean isNotificacionBomberos() {
+        return notificacionBomberos;
+    }
+
+    public void setNotificacionBomberos(boolean notificacionBomberos) {
+        this.notificacionBomberos = notificacionBomberos;
+    }
+
+    public boolean isNotificacionAmbulancia() {
+        return notificacionAmbulancia;
+    }
+
+    public void setNotificacionAmbulancia(boolean notificacionAmbulancia) {
+        this.notificacionAmbulancia = notificacionAmbulancia;
+    }
 
     public Set<TrabajadorMunicipalidad> getTrabajadorMunicipalidads() {
         return trabajadorMunicipalidads;
