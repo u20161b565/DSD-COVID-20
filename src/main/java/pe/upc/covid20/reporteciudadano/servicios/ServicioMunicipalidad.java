@@ -25,15 +25,15 @@ public class ServicioMunicipalidad {
     @Autowired
     private RepositorioCiudadano repositorioCiudadano;
 
-    public Municipalidad proRegistrar(Municipalidad municipalidad){
+    public Municipalidad proRegistrar(Municipalidad municipalidad) {
         return repositorioMunicipalidad.save(municipalidad);
     }
 
-    public List<Municipalidad> proListar(){
+    public List<Municipalidad> proListar() {
         return repositorioMunicipalidad.findAll();
     }
 
-    public Municipalidad proActualizar(Integer codigo, Municipalidad municipalidad){
+    public Municipalidad proActualizar(Integer codigo, Municipalidad municipalidad) {
         if (repositorioMunicipalidad.existsById(codigo)) {
             municipalidad.setId(codigo);
             return repositorioMunicipalidad.save(municipalidad);

@@ -145,7 +145,7 @@ public class Ciudadano implements Serializable {
     {
 
     }
-    
+
     public Ciudadano(int id, String usuario, String contrasena, String tipoDocumento, String numeroDocumento, String primerNombre, String secundoNombre, String apellidoPaterno, String apellidoMaterno, String correo, String celular, Distrito distrito, Reporte reporte, Boolean esActivo) {
         this.id = id;
         this.usuario = usuario;

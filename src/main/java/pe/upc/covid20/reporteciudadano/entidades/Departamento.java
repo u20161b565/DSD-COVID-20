@@ -54,9 +54,11 @@ public class Departamento implements Serializable {
             provincia.setDepartamento(this);
         }
     }
+
     public Departamento() {
         this.provincias = new HashSet<>();
     }
+
     public Departamento(int id, String nombre, Boolean esActivo) {
         this.id = id;
         this.nombre = nombre;
