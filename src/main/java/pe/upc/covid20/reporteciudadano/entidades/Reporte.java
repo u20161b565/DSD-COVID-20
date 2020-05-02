@@ -1,6 +1,5 @@
 package pe.upc.covid20.reporteciudadano.entidades;
 
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
