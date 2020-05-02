@@ -1,5 +1,8 @@
 package pe.upc.covid20.reporteciudadano.entidades;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -65,6 +68,11 @@ public class Provincia implements Serializable {
 
     public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
-        // departamento.getProvincias().add(this);
+        departamento.getProvincias().add(this);
+    }
+
+    @JsonCreator
+    public Departamento (@JsonProperty("departamento_id") Integer departamento_id ) {
+        this.departamento_id = departamento_id;
     }
 }

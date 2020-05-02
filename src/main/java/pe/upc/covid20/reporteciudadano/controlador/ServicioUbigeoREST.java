@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import pe.upc.covid20.reporteciudadano.entidades.Ciudadano;
 import pe.upc.covid20.reporteciudadano.entidades.Departamento;
+import pe.upc.covid20.reporteciudadano.entidades.Provincia;
 import pe.upc.covid20.reporteciudadano.servicios.ServicioRegistroUsuario;
 import pe.upc.covid20.reporteciudadano.servicios.ServicioUbigeo;
 
@@ -63,10 +64,71 @@ public class ServicioUbigeoREST {
     }
 
     @DeleteMapping("/departamento/{codigo}")
-    public String depaActualizar(@PathVariable("codigo") Integer codigo) {
+    public String depaEliminar(@PathVariable("codigo") Integer codigo) {
         String result;
         try {
             servicioUbigeo.depaEliminar(codigo);
+            result = "OK";
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo actualizar");
+        }
+        return result;
+    }
+
+    @GetMapping("/provincia")
+    public List<Provincia> proListar() {
+        List<Provincia> result;
+        try {
+            result = servicioUbigeo.proListar();
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo listar.");
+        }
+        return result;
+    }
+
+    @GetMapping("/provincia/{codigo}")
+    public Provincia proObtener(@PathVariable("codigo") Integer codigo) {
+        Provincia result;
+        try {
+            result = servicioUbigeo.proObtener(codigo);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo obtener");
+        }
+        return result;
+    }
+
+    @PostMapping("/provincia")
+    public Provincia proRegistrar(@RequestBody Provincia input) {
+        Provincia result;
+        /*
+        try {
+         */
+            result = servicioUbigeo.proRegistrar(input);
+        /*} catch (Exception e) {
+
+
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo registrar");
+        }
+        */
+        return result;
+    }
+
+    @PostMapping("/provincia/{codigo}")
+    public Provincia proActualizar(@RequestBody Provincia input, @PathVariable("codigo") Integer codigo) {
+        Provincia result;
+        try {
+            result = servicioUbigeo.proActualizar(codigo, input);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo actualizar");
+        }
+        return result;
+    }
+
+    @DeleteMapping("/provincia/{codigo}")
+    public String proEliminar(@PathVariable("codigo") Integer codigo) {
+        String result;
+        try {
+            servicioUbigeo.proEliminar(codigo);
             result = "OK";
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo actualizar");
