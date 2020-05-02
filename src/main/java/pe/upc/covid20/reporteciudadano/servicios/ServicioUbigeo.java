@@ -8,10 +8,7 @@ import pe.upc.covid20.reporteciudadano.entidades.Ciudadano;
 import pe.upc.covid20.reporteciudadano.entidades.Departamento;
 import pe.upc.covid20.reporteciudadano.entidades.Distrito;
 import pe.upc.covid20.reporteciudadano.entidades.Provincia;
-import pe.upc.covid20.reporteciudadano.repositorio.RepositorioCiudadano;
-import pe.upc.covid20.reporteciudadano.repositorio.RepositorioDepartamento;
-import pe.upc.covid20.reporteciudadano.repositorio.RepositorioDistrito;
-import pe.upc.covid20.reporteciudadano.repositorio.RepositorioProvincia;
+import pe.upc.covid20.reporteciudadano.repositorio.*;
 
 import java.util.List;
 
