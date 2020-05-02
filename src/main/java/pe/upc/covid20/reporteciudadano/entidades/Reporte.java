@@ -156,6 +156,9 @@ public class Reporte implements Serializable {
         this.ciudadanos = ciudadanos;
     }
 
+    public Reporte() {
+
+    }
     public Reporte(int id, TipoReporte tipoReporte, String direccion, int latitud, int longitud, String status, String descripcion, boolean notificacionPolicia, boolean notificacionSerenazgo, boolean notificacionBomberos, boolean notificacionAmbulancia, Distrito distrito, Set<Ciudadano> ciudadanos, Set<TrabajadorMunicipalidad> trabajadorMunicipalidads) {
         this.id = id;
         this.tipoReporte = tipoReporte;

@@ -24,15 +24,15 @@ public class JmsProducerConsumer {
             m.setJMSCorrelationID(id);
             return m;
         });
-        System.out.println("RIPLEY: Enviando " + msg);
-        System.out.println("RIPLEY: Enviando con CorrId: " + id);
+        System.out.println("Cola Reporte: Enviando " + msg);
+        System.out.println("Cola Reporte: Enviando con CorrId: " + id);
         //espera respuesta solo de un mensaje cuyo corrId es el mismo del que envió
         //jmsTemplate.setReceiveTimeout(1000);
         String responseMessage = (String) jmsTemplate
                 .receiveSelectedAndConvert(responseQueue,
                         "JMSCorrelationID='" + id + "'");
-        System.out.println("RIPLEY RESPUESTA:" + responseMessage);
-        System.out.println("RIPLEY RESPUESTA CORR ID:" + id);
+        System.out.println("Cola Reporte Response:" + responseMessage);
+        System.out.println("Cola Reporte Response id:" + id);
     }
 
 }
