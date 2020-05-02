@@ -95,12 +95,35 @@ public class ServicioMunicipalidadREST {
     }
 
     @GetMapping("/municipalidad/{codigo}")
-    public Municipalidad depaObtener(@PathVariable("codigo") Integer codigo) {
+    public Municipalidad proObtener(@PathVariable("codigo") Integer codigo) {
         Municipalidad result;
         try {
             result = servicioMunicipalidad.proObtener(codigo);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo obtener");
+        }
+        return result;
+    }
+
+    @DeleteMapping("/municipalidad/{codigo}")
+    public String proEliminar(@PathVariable("codigo") Integer codigo) {
+        String result;
+        try {
+            servicioMunicipalidad.proEliminar(codigo);
+            result = "OK";
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo actualizar");
+        }
+        return result;
+    }
+
+    @PostMapping("/municipalidad/{codigo}")
+    public Municipalidad proActualizar(@RequestBody Municipalidad input, @PathVariable("codigo") Integer codigo) {
+        Municipalidad result;
+        try {
+            result = servicioMunicipalidad.proActualizar(codigo, input);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se pudo actualizar");
         }
         return result;
     }
